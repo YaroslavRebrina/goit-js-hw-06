@@ -5,17 +5,17 @@ const onSumbitHandler = (event) => {
     event.preventDefault();
     const { email, password } = event.currentTarget;
     
-    if (email.value === '' || password.value === '') {
+    if (email.value.trim() === '' || password.value.trim() === '') {
        return alert(`Please insert your information in all fields!`)
     }
 
     const data = {
-        [event.target.elements.email.name]: email.value,
-        [event.target.elements.password.name]: password.value
+        [email.name]: email.value,
+        [password.name]: password.value
     }
 
     console.log(data)
-    loginFormRef.reset()
+    event.currentTarget.reset()
 }
 
 

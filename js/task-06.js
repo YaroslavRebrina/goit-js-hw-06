@@ -1,14 +1,12 @@
 const inputRef = document.querySelector('#validation-input')
 
 const onBlurInputValidation = () => {
-    if (inputRef.value.length < inputRef.dataset.length) {
-        inputRef.classList.add('invalid')
+    inputRef.classList.remove('invalid', 'valid')
+
+    if (inputRef.value.length === Number(inputRef.dataset.length)) {
+        inputRef.classList.add('valid')
     } else {
-        if (inputRef.classList.contains('invalid')){
-            inputRef.classList.replace('invalid', 'valid')
-        } else {
-            inputRef.classList.add('valid')
-        }
+        inputRef.classList.add('invalid')
     }
 }
 

@@ -14,13 +14,13 @@ const images = [
 ];
 
 const galleryRef = document.querySelector('.gallery')
-let galleryHtmlArray = []
+
 
 const newGallery = images.map(({url, alt}) => { 
-  galleryHtmlArray.push(`<li class = '_03__flexbox'> <img src = ${url} alt = ${alt} class = '_03__img' /></li>`)
+  return `<li class = '_03__flexbox'> <img src = ${url} alt = ${alt} class = '_03__img' /></li>`
   
-}) 
+}).join('')
 
-galleryRef.insertAdjacentHTML('beforebegin', [...galleryHtmlArray])
+galleryRef.insertAdjacentHTML('beforebegin', newGallery)
 
-console.log(galleryHtmlArray)
+console.log(newGallery)

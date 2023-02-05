@@ -4,7 +4,7 @@ const userName = document.querySelector("span#name-output")
 
 
 const onInputHandler = () => {{
-    if (inputRef.value === '') {
+    if (!inputRef.value.trim()) {
        return userName.textContent= 'Anonymous'
     }
     return userName.textContent = inputRef.value
